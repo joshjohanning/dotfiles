@@ -3,15 +3,12 @@
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [user]
-	name = Joshua Johanning
-	email = jjohanning@10thmagnitude.com
+	name = Josh Johanning
+	email = joshjohanning@github.com
+[github]
+	user = joshjohanning
 [pager]
 	branch = false
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [pull]
 	ff = true
 [init]
