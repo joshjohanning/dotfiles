@@ -14,9 +14,13 @@ zshrc() {
     echo "-----------------------------------------------------------"
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     echo "==========================================================="
-    echo "                  Import zshrc                             "
+    echo "             import zshrc                                  "
     echo "-----------------------------------------------------------"
     cat .zshrc > $HOME/.zshrc
+    echo "==========================================================="
+    echo "             import powerlevel10k                          "
+    echo "-----------------------------------------------------------"
+    cat .p10k.zsh > $HOME/.p10k.zsh
 }
 
 zshrc
