@@ -31,5 +31,7 @@ zshrc
 
 # needs to be after zshrc
 echo "" >> ~/.zshrc
-echo "# remove ls highlight color" >> ~/.zshrc
-echo "LS_COLORS+=':ow=01;33'" >> ~/.zshrc
+echo "# remove ls and directory completion highlight color" >> ~/.zshrc
+echo "_ls_colors=':ow=01;33'" >> ~/.zshrc
+echo 'zstyle ":completion:*:default" list-colors "${(s.:.)_ls_colors}"' >> ~/.zshrc
+echo 'LS_COLORS+=$_ls_colors' >> ~/.zshrc
