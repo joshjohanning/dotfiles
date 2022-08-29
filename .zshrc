@@ -121,3 +121,8 @@ export PATH="$HOME/go/bin/:$PATH"
 # added by terraform -install-autocomplete
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+
+# command output behavior - send output to terminal
+# see: https://superuser.com/questions/1698521/zsh-keep-all-command-outputs-on-terminal-screen
+export PAGER=""
