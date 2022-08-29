@@ -122,6 +122,12 @@ export PATH="$HOME/go/bin/:$PATH"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
+# used for gh cli auto completion
+# see: https://cli.github.com/manual/gh_completion
+[[ -d ~/.oh-my-zsh/completions ]] || mkdir ~/.oh-my-zsh/completions
+gh completion -s zsh > ~/.oh-my-zsh/completions/_gh
+autoload -U compinit
+compinit -i
 
 # command output behavior - send output to terminal
 # see: https://superuser.com/questions/1698521/zsh-keep-all-command-outputs-on-terminal-screen
