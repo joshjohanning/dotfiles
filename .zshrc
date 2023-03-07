@@ -133,3 +133,9 @@ compinit -i
 # command output behavior - send output to terminal
 # see: https://superuser.com/questions/1698521/zsh-keep-all-command-outputs-on-terminal-screen
 export PAGER=""
+
+# Do not put commands in history if they begin with a SPACE
+setopt HIST_IGNORE_SPACE
+
+# Trim excessive whitespace from commands before adding to history
+setopt HIST_REDUCE_BLANKS
