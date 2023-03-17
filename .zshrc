@@ -83,7 +83,7 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
-  dotenv
+  # dotenv
 )
 
 source $ZSH/oh-my-zsh.sh
