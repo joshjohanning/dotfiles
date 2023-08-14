@@ -36,19 +36,21 @@ See [link](https://burkeholland.github.io/posts/codespaces-dotfiles/) for more i
 
 ## Brewfile
 
+Running this command exports formulae, casks, and VS Code extensions to a file:
+
 ```bash
 # creating a Brewfile
-brew bundle dump --file=~/.dotfiles/Brewfile --force
+brew bundle dump --file=~/dotfiles/Brewfile --force
 # installing a Brewfile
-brew bundle install --file=~/.dotfiles/Brewfile
+brew bundle install --file=~/dotfiles/Brewfile
 ```
 
 ## VS Code
 
 My default profile is saved as `Default.code-profile` (exported manually via Code > Settings > Profiles)
 
-My extensions are exported (but not whether they are enabled or disabled) and saved as `my_vscode_extensions.sh` via the following command: 
+Extensions are exported via the `brew` command above.
 
-```bash
-code --list-extensions | sed -e 's/^/code --install-extension /' > my_vscode_extensions.sh
-```
+## iTerm2
+
+My iTerm2 profile is saved as `iterm2-profile.json` (exported manually via iTerm2 > Settings > Profiles > Other Actions > Save Profile as JSON)
