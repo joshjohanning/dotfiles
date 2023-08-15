@@ -54,3 +54,11 @@ Extensions are exported via the `brew` command above.
 ## iTerm2
 
 My iTerm2 profile is saved as `iterm2-profile.json` (exported manually via iTerm2 > Settings > Profiles > Other Actions > Save Profile as JSON)
+
+## GitHub CLI Extensions
+
+Exporting a list of installed `gh` extensions:
+
+```bash
+gh extension list | awk '{print $3}' > gh-extensions-list.txt
+```
