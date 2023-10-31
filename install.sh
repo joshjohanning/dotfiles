@@ -16,11 +16,11 @@ zshrc() {
     echo "==========================================================="
     echo "             import zshrc                                  "
     echo "-----------------------------------------------------------"
-    cat .zshrc > $HOME/.zshrc
+    cat .zshrc > "$HOME"/.zshrc
     echo "==========================================================="
     echo "             import powerlevel10k                          "
     echo "-----------------------------------------------------------"
-    cat .p10k.zsh > $HOME/.p10k.zsh
+    cat .p10k.zsh > "$HOME"/.p10k.zsh
 }
 
 # change time zone
