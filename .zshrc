@@ -139,3 +139,11 @@ setopt HIST_IGNORE_SPACE
 
 # Trim excessive whitespace from commands before adding to history
 setopt HIST_REDUCE_BLANKS
+
+# OS Specific setup
+case "$OSTYPE" in
+  darwin*)
+    # other commands: https://stackoverflow.com/questions/71591971/how-can-i-fix-the-zsh-command-not-found-python-error-macos-monterey-12-3
+    eval "$(pyenv init --path)" 
+    ;;
+esac
