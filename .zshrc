@@ -126,8 +126,6 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 # used for gh cli auto completion
 # see: https://cli.github.com/manual/gh_completion
 [[ -d ~/.oh-my-zsh/completions ]] || mkdir ~/.oh-my-zsh/completions
-# don't think this is needed for newer codespaces?
-if [ $(whoami) = "codespace" ]; then sudo chown -R $(whoami) ~/.oh-my-zsh/completions; fi
 gh completion -s zsh > ~/.oh-my-zsh/completions/_gh
 autoload -U compinit
 compinit -i
