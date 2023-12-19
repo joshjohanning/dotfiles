@@ -134,8 +134,20 @@ compinit -i
 # see: https://superuser.com/questions/1698521/zsh-keep-all-command-outputs-on-terminal-screen
 export PAGER=""
 
+# History settings
+HISTSIZE=500000
+SAVEHIST=500000
 # Do not put commands in history if they begin with a SPACE
 setopt HIST_IGNORE_SPACE
-
 # Trim excessive whitespace from commands before adding to history
 setopt HIST_REDUCE_BLANKS
+# Expire duplicate entries first when trimming history
+# setopt HIST_EXPIRE_DUPS_FIRST
+
+# Function: Deletes most recent line of history
+# cannot be ran twice in a row (only once, otherwise it deletes 2 lines)
+hrm() {
+  ed -s ~/.zsh_history <<< $'-1,$d\nwq'
+  # sed -i '' '$d' ~/.zsh_history # you need it to run twice the first time...
+}
+
