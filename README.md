@@ -1,6 +1,6 @@
 # dotfiles
 
-Thank you to joshjohanning/dotfiles for creating the original dotfiles repo. [dotfiles](https://github.com/joshjohanning/dotfiles)
+Thank you to joshjohanning/dotfiles for creating the original dotfiles repo. [dotfiles](https://github.com/joshjohanning/dotfiles).
 
 ## Setup
 
