@@ -38,7 +38,7 @@ jobs:
       ### For a DevOps-focused repository. Prevents some code-language linters from running
       ### defaults to false
       devops-only: true
-
+      
       ### A regex to exclude files from linting
       ### defaults to empty
       # filter-regex-exclude: html/.*
