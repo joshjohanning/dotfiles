@@ -146,4 +146,9 @@ case "$OSTYPE" in
     # other commands: https://stackoverflow.com/questions/71591971/how-can-i-fix-the-zsh-command-not-found-python-error-macos-monterey-12-3
     eval "$(pyenv init --path)" 
     ;;
+    ## Set docker to be export linux/amd64 to env on Mac OS
+    eval "export DOCKER_DEFAULT_PLATFORM=linux/amd64"
+
+
 esac
+
