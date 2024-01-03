@@ -147,7 +147,6 @@ case "$OSTYPE" in
     eval "$(pyenv init --path)" 
     ;;
     ## Set docker to be export linux/amd64 to env on Mac OS
-    eval "export DOCKER_DEFAULT_PLATFORM=linux/amd64"
 
 
 esac
