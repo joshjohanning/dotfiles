@@ -62,3 +62,10 @@ Exporting a list of installed `gh` extensions:
 ```bash
 gh extension list | awk '{print $3}' > gh-extensions-list.txt
 ```
+
+## Updating OhMyZsh and PowerLevel10k
+
+```bash
+omz update
+git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
+```
