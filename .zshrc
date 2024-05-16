@@ -152,5 +152,5 @@ hrm() {
   # sed -i '' '$d' ~/.zsh_history # you need it to run twice the first time...
 }
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# use homebrew ruby if not on Codespaces
+if [ $(whoami) != "codespace" ]; then export PATH="/opt/homebrew/opt/ruby/bin:$PATH"; fi
