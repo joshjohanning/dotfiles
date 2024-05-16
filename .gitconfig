@@ -3,6 +3,7 @@
 [user]
 	name = Josh Johanning
 	email = joshjohanning@github.com
+	signingkey = /Users/joshjohanning/.ssh/id_rsa.pub
 [github]
 	user = joshjohanning
 [pager]
@@ -18,3 +19,7 @@
 	autoSetupRemote = true
 [core]
 	editor = code --wait
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
