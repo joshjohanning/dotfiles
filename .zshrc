@@ -34,7 +34,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -122,6 +122,7 @@ export PATH="$HOME/go/bin/:$PATH"
 # added by terraform -install-autocomplete
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+eval "$(github-copilot-cli alias -- "$0")"
 
 # used for gh cli auto completion
 # see: https://cli.github.com/manual/gh_completion
@@ -134,9 +135,11 @@ compinit -i
 # see: https://superuser.com/questions/1698521/zsh-keep-all-command-outputs-on-terminal-screen
 export PAGER=""
 
+# History settings
+HISTSIZE=500000
+SAVEHIST=500000
 # Do not put commands in history if they begin with a SPACE
 setopt HIST_IGNORE_SPACE
-
 # Trim excessive whitespace from commands before adding to history
 setopt HIST_REDUCE_BLANKS
 
@@ -149,5 +152,15 @@ case "$OSTYPE" in
     ## Set docker to be export linux/amd64 to env on Mac OS
 
 
-esac
+# Expire duplicate entries first when trimming history
+# setopt HIST_EXPIRE_DUPS_FIRST
 
+# Function: Deletes most recent line of history
+# cannot be ran twice in a row (only once, otherwise it deletes 2 lines)
+hrm() {
+  ed -s ~/.zsh_history <<< $'-1,$d\nwq'
+  # sed -i '' '$d' ~/.zsh_history # you need it to run twice the first time...
+}
+
+# use homebrew ruby if not on Codespaces
+if [ $(whoami) != "codespace" ]; then export PATH="/opt/homebrew/opt/ruby/bin:$PATH"; fi
