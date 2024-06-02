@@ -13,7 +13,7 @@
 
   };
   
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
 
   let
 
@@ -21,7 +21,7 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
 
-
+    
 
       environment.systemPackages =
         [
@@ -30,9 +30,9 @@
           # https://github.com/nektos/act 
           pkgs.act
           # docker-machine drop in
-          pkgs.colima
           pkgs.docker
           pkgs.docker-compose
+          pkgs.colima
           pkgs.qemu
           pkgs.tmux
           pkgs.playwright
@@ -40,6 +40,8 @@
           # Finds commands that aren't installed
           pkgs.comma
           pkgs.autorestic
+          pkgs.rancher
+
         ];
 
       # Auto upgrade nix package and the daemon service.
@@ -70,8 +72,25 @@
     # $ darwin-rebuild build --flake .#Craigs-Laptop
     darwinConfigurations."Craigs-Laptop" = nix-darwin.lib.darwinSystem {
       
-      modules = [ configuration ];
-    };
+      modules = [ configuration,
+        nix-homebrew.darwinModules.nix-homebrew ];
+        {
+          nix-homebrew = {
+            # Install Homebrew under the default prefix
+            enable = true;
+
+            # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
+            enableRosetta = true;
+
+            # User owning the Homebrew prefix
+            user = "craig";
+
+            # Automatically migrate existing Homebrew installations
+            autoMigrate = true;
+            # /run/current-system/sw/bin is here the packages are linked
+          };
+        }
+    
 
     # Expose the package set, including overlays, for convenience.
     darwinPackages = self.darwinConfigurations."Craigs-Laptop".pkgs;
