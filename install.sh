@@ -21,6 +21,16 @@ zshrc() {
     echo "             import powerlevel10k                          "
     echo "-----------------------------------------------------------"
     cat .p10k.zsh > "$HOME"/.p10k.zsh
+    echo "==========================================================="
+    echo "             import .gitconfig                             "
+    echo "-----------------------------------------------------------"
+    cat .gitconfig > "$HOME"/.gitconfig
+    echo "==========================================================="
+    echo "             import .gitignore                             "
+    echo "-----------------------------------------------------------"
+    cat .gitignore > "$HOME"/.gitignore
+    # add a line here to symlink to ~/.config/nix-darwin
+
 }
 
 # change time zone

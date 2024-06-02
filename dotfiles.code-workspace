@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../.config/nix-darwin"
+		},
+		{
+			"path": "../../../../run/current-system/sw/bin"
+		}
+	],
+	"settings": {}
+}
