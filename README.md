@@ -1,14 +1,14 @@
 # dotfiles
 
-This repository contains the dotfiles I use to configure my development environment and sync to [GitHub Codespaces](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) (read more in my [blog post](https://josh-ops.com/posts/github-codespaces-powerlevel10k/)). 
+Thank you to joshjohanning/dotfiles for creating the original dotfiles repository. [dotfiles](https://github.com/joshjohanning/dotfiles).
 
 ## Setup
 
 These are instructions on how to set up your local environment by creating symbolic links (symlinks) to the dotfiles in this repo:
 
-1. Create dotfiles repo, ie: `mkdir ~/dotfiles && cd ~/dotfiles && git init`
+1. Create dotfiles repository, ie: `mkdir ~/dotfiles && cd ~/dotfiles && git init`
 2. Run the `ln -s` commands below to create the appropriate symlinks
-3. Commit your changes to the dotfiles repo
+3. Commit your changes to the dotfiles repository
 
 ```bash
 ln -s ~/dotfiles/.zshrc ~/.zshrc

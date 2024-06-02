@@ -1,0 +1,47 @@
+#!/nix/store/6nxav88iiz0g8m598xy643f8hhdz5kkx-bash-5.2-p21/bin/bash
+set -e
+
+action=switch
+while [ "$#" -gt 0 ]; do
+    i="$1"; shift 1
+    case "$i" in
+        --help)
+            echo "darwin-uninstaller: [--help]"
+            exit
+            ;;
+    esac
+done
+
+echo >&2
+echo >&2 "Uninstalling nix-darwin, this will:"
+echo >&2
+echo >&2 "    - remove /Applications/Nix Apps symlink"
+echo >&2 "    - cleanup static /etc files"
+echo >&2 "    - disable and remove all launchd services managed by nix-darwin"
+echo >&2 "    - restore daemon service from nix installer (only when this is a multi-user install)"
+echo >&2
+
+if test -t 0; then
+    read -p "Proceed? [y/n] " i
+    case "$i" in
+        y|Y)
+            ;;
+        *)
+            exit 3
+            ;;
+    esac
+fi
+
+/nix/store/szyg7scwansx0011kv6300c03npi99a2-darwin-system-24.05pre565199.63143ac2c918+darwin4/sw/bin/darwin-rebuild activate
+
+if test -L /run/current-system; then
+  sudo rm /run/current-system
+fi
+
+echo >&2
+echo >&2 "NOTE: The /nix/var/nix/profiles/system* profiles still exist and won't be garbage collected."
+echo >&2
+echo >&2 "Done!"
+echo >&2
+exit
+

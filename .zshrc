@@ -142,6 +142,16 @@ SAVEHIST=500000
 setopt HIST_IGNORE_SPACE
 # Trim excessive whitespace from commands before adding to history
 setopt HIST_REDUCE_BLANKS
+
+# OS Specific setup
+case "$OSTYPE" in
+  darwin*)
+    # other commands: https://stackoverflow.com/questions/71591971/how-can-i-fix-the-zsh-command-not-found-python-error-macos-monterey-12-3
+    eval "$(pyenv init --path)" 
+    ;;
+    ## Set docker to be export linux/amd64 to env on Mac OS
+
+
 # Expire duplicate entries first when trimming history
 # setopt HIST_EXPIRE_DUPS_FIRST
 
