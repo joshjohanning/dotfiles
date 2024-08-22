@@ -119,17 +119,6 @@ export PATH="$HOME/go/bin/:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# added by terraform -install-autocomplete
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
-eval "$(github-copilot-cli alias -- "$0")"
-
-# used for gh cli auto completion
-# see: https://cli.github.com/manual/gh_completion
-[[ -d ~/.oh-my-zsh/completions ]] || mkdir ~/.oh-my-zsh/completions
-gh completion -s zsh > ~/.oh-my-zsh/completions/_gh
-autoload -U compinit
-compinit -i
 
 # command output behavior - send output to terminal
 # see: https://superuser.com/questions/1698521/zsh-keep-all-command-outputs-on-terminal-screen
