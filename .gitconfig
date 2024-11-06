@@ -1,5 +1,3 @@
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [user]
 	name = Josh Johanning
 	email = joshjohanning@github.com
@@ -12,9 +10,6 @@
 	ff = true
 [init]
 	defaultBranch = main
-[credential]
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
 [push]
 	autoSetupRemote = true
 [core]
@@ -23,12 +18,13 @@
 	gpgsign = true
 [gpg]
 	format = ssh
-[credential "https://ghes71.tspascoal.com"]
-	provider = github
-[credential "https://joshjohanning-0eeeb288b41d29b3e.qaboot.net"]
-	provider = github
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
