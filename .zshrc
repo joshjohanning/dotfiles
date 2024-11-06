@@ -122,7 +122,9 @@ export PATH="$HOME/go/bin/:$PATH"
 # added by terraform -install-autocomplete
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
-eval "$(github-copilot-cli alias -- "$0")"
+alias '??'='gh copilot suggest -t shell'
+alias 'git?'='gh copilot suggest -t git'
+alias 'explain?'='gh copilot explain'
 
 # used for gh cli auto completion
 # see: https://cli.github.com/manual/gh_completion
