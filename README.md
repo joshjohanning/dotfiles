@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository contains the dotfiles I use to configure my development environment and sync to [GitHub Codespaces](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) (read more in my [blog post](https://josh-ops.com/posts/github-codespaces-powerlevel10k/)). 
+This repository contains the dotfiles I use to configure my development environment and sync to [GitHub Codespaces](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) (read more in my [blog post](https://josh-ops.com/posts/github-codespaces-powerlevel10k/)).
 
 ## Setup
 
