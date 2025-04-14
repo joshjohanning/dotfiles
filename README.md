@@ -63,6 +63,14 @@ Exporting a list of installed `gh` extensions:
 gh extension list | awk '{print $3}' > gh-extensions-list.txt
 ```
 
+## Installing OhMyZsh
+
+If OhMyZsh is not installed (e.g. on a new machine), run the following command:
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## Updating OhMyZsh and PowerLevel10k
 
 ```bash
