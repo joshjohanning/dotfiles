@@ -156,3 +156,6 @@ hrm() {
 
 # use homebrew ruby if not on Codespaces
 if [ $(whoami) != "codespace" ]; then export PATH="/opt/homebrew/opt/ruby/bin:$PATH"; fi
+
+# use the jdk
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
