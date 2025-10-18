@@ -128,8 +128,11 @@ alias 'explain?'='gh copilot explain'
 
 # used for gh cli auto completion
 # see: https://cli.github.com/manual/gh_completion
-[[ -d ~/.oh-my-zsh/completions ]] || mkdir ~/.oh-my-zsh/completions
-gh completion -s zsh > ~/.oh-my-zsh/completions/_gh
+# Only generate if it doesn't exist or is older than 7 days
+if [[ ! -f ~/.oh-my-zsh/completions/_gh ]] || [[ -n $(find ~/.oh-my-zsh/completions/_gh -mtime +7 2>/dev/null) ]]; then
+  [[ -d ~/.oh-my-zsh/completions ]] || mkdir -p ~/.oh-my-zsh/completions
+  gh completion -s zsh > ~/.oh-my-zsh/completions/_gh 2>/dev/null &!
+fi
 autoload -U compinit
 compinit -i
 
@@ -159,3 +162,6 @@ if [ $(whoami) != "codespace" ]; then export PATH="/opt/homebrew/opt/ruby/bin:$P
 
 # use the jdk
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# Ensure clean exit for instant prompt compatibility
+true
