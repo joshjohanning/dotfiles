@@ -165,3 +165,4 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Ensure clean exit for instant prompt compatibility
 true
+export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
