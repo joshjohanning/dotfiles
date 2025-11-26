@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "lindell/multi-gitter"
 tap "simnalamburt/x"
 brew "openssl@3"
